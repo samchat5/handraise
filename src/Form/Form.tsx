@@ -110,7 +110,7 @@ function Form(): JSX.Element {
                 <div className="col">
                     <button
                         disabled={isRaised}
-                        className="btn btn-lg btn-primary"
+                        className="btn btn-lg btn-danger"
                         type="submit"
                     >
                         Raise Placard
@@ -121,7 +121,7 @@ function Form(): JSX.Element {
                         type="button"
                         onClick={deleteEntry}
                         disabled={!isRaised}
-                        className="btn btn-lg btn-primary"
+                        className="btn btn-lg btn-danger"
                     >
                         Lower Placard
                     </button>
