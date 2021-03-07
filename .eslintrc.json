@@ -17,31 +17,31 @@
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:react/recommended",
-        "airbnb",
+        "airbnb-typescript",
         "plugin:prettier/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "JSX": "readonly"
     },
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
         "ecmaVersion": 11,
-        "sourceType": "module"
+        "sourceType": "module",
+        "project": "./tsconfig.json"
     },
-    "plugins": [
-        "@typescript-eslint",
-        "react",
-        "prettier",
-        "import"
-    ],
+    "plugins": ["@typescript-eslint", "react", "prettier", "import"],
     "rules": {
         "prettier/prettier": "error",
         "indent": ["error", 4],
+        "@typescript-eslint/indent": ["error", 4],
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": ["error", 4],
+        "@typescript-eslint/quotes": ["error", "double"],
+        "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
         "react/jsx-filename-extension": [0],
         "import/extensions": [
             "error",

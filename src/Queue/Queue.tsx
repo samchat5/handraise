@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ListItem, List, ListItemText, Paper } from "@material-ui/core";
 import firebase from "../firebase";
 
 class Placard {
@@ -68,21 +69,31 @@ function Queue(): JSX.Element {
                     setEntryArray(newArr);
                 },
                 (err) => {
+                    // eslint-disable-next-line no-console
                     console.log(`Encountered error ${err}`);
                 }
             );
     }, []);
 
     return (
-        <div>
-            <ul className="list-group">
-                {entryArray.map((entry) => {
+        <Paper>
+            <List
+                style={{
+                    padding: 0,
+                }}
+            >
+                {entryArray.map((entry, index) => {
                     return (
-                        <li className="list-group-item">{entry.toString()}</li>
+                        <ListItem
+                            button
+                            divider={index !== entryArray.length - 1}
+                        >
+                            <ListItemText primary={entry.toString()} />
+                        </ListItem>
                     );
                 })}
-            </ul>
-        </div>
+            </List>
+        </Paper>
     );
 }
 
