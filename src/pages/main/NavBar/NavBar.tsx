@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes, { InferProps } from "prop-types";
-import { AppBar, Toolbar, Button, Typography, Grid } from "@material-ui/core";
+import {
+  AppBar, Toolbar, Button, Typography, Grid,
+} from "@material-ui/core";
 import { Variant } from "@material-ui/core/styles/createTypography";
 
 function NavBar(props: InferProps<typeof NavBar.propTypes>): JSX.Element {

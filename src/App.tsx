@@ -7,9 +7,9 @@ import {
   ThemeProvider,
 } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
-import Form from "./Form/Form";
-import NavBar from "./NavBar/NavBar";
-import Queue from "./Queue/Queue";
+import Form from "./pages/main/Form/Form";
+import NavBar from "./pages/main/NavBar/NavBar";
+import Queue from "./pages/main/Queue/Queue";
 
 const dark: ThemeOptions = {
   palette: {

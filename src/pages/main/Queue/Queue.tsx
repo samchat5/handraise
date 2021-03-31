@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { ListItem, List, ListItemText, Paper } from "@material-ui/core";
-import firebase from "../firebase";
+import {
+  ListItem, List, ListItemText, Paper,
+} from "@material-ui/core";
+import firebase from "../../../firebase";
 
 class Placard {
   name: string;
@@ -15,7 +17,7 @@ class Placard {
     name: string,
     reason: string,
     inquiry: string,
-    timestamp: firebase.firestore.Timestamp
+    timestamp: firebase.firestore.Timestamp,
   ) {
     this.name = name;
     this.reason = reason;
@@ -34,16 +36,16 @@ const placardConverter = {
       name: placard.name,
       reason: placard.reason,
       inquiry: placard.inquiry,
-      timestamp: placard.timestamp
+      timestamp: placard.timestamp,
     };
   },
   fromFirestore(
     snapshot: firebase.firestore.QueryDocumentSnapshot,
-    options: firebase.firestore.SnapshotOptions
+    options: firebase.firestore.SnapshotOptions,
   ): Placard {
     const data = snapshot.data(options);
     return new Placard(data.name, data.reason, data.inquiry, data.timestamp);
-  }
+  },
 };
 
 const db = firebase.firestore();
@@ -66,7 +68,7 @@ function Queue(): JSX.Element {
         (err) => {
           // eslint-disable-next-line no-console
           console.log(`Encountered error ${err}`);
-        }
+        },
       );
   }, []);
 
@@ -74,16 +76,14 @@ function Queue(): JSX.Element {
     <Paper>
       <List
         style={{
-          padding: 0
+          padding: 0,
         }}
       >
-        {entryArray.map((entry, index) => {
-          return (
-            <ListItem button divider={index !== entryArray.length - 1}>
-              <ListItemText primary={entry.toString()} />
-            </ListItem>
-          );
-        })}
+        {entryArray.map((entry, index) => (
+          <ListItem button divider={index !== entryArray.length - 1}>
+            <ListItemText primary={entry.toString()} />
+          </ListItem>
+        ))}
       </List>
     </Paper>
   );

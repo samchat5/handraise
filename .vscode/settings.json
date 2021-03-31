@@ -1,17 +1,16 @@
 {
-    "editor.formatOnSave": true,
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-        "editor.formatOnSave": true 
-    },
-    "[typescript]": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-        "editor.formatOnSave": true
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
-        "editor.formatOnSave": true
-    },
-    "git.autofetch": true,
+  "editor.formatOnSave": true,
+  "[javascriptreact]": {
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.formatOnSave": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+    "editor.formatOnSave": true
+  },
+  "git.autofetch": true
 }

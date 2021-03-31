@@ -8,7 +8,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import React, { useState } from "react";
-import firebase from "../firebase";
+import firebase from "../../../firebase";
 
 const db = firebase.firestore();
 
@@ -22,7 +22,7 @@ function Form(): JSX.Element {
   const handleReason = (
     event: React.ChangeEvent<{
       value: unknown;
-    }>
+    }>,
   ) => {
     setReason(event.target.value as string);
   };

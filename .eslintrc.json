@@ -18,7 +18,7 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "airbnb-typescript",
-    "plugin:prettier/recommended"
+    "prettier"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -33,10 +33,9 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "react", "prettier", "import"],
+  "plugins": ["@typescript-eslint", "react", "import"],
   "rules": {
     "@typescript-eslint/quotes": ["error", "double"],
-    "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
     "import/extensions": [
       "error",
       "ignorePackages",
