@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import {
-  Grid,
   createMuiTheme,
   CssBaseline,
   ThemeOptions,
   ThemeProvider,
 } from "@material-ui/core";
 import { red } from "@material-ui/core/colors";
-import Form from "./pages/main/Form/Form";
-import NavBar from "./pages/main/NavBar/NavBar";
-import Queue from "./pages/main/Queue/Queue";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Main from "./pages/main/Main";
+import Login from "./pages/login/Login";
 
 const dark: ThemeOptions = {
   palette: {
@@ -22,6 +21,9 @@ const light: ThemeOptions = {
   palette: {
     primary: red,
     type: "light",
+    secondary: {
+      main: "#ffffff",
+    },
   },
 };
 
@@ -33,21 +35,16 @@ function App(): JSX.Element {
   return (
     <ThemeProvider theme={appliedTheme}>
       <CssBaseline />
-      <div style={{ overflowX: "hidden", height: "100vh" }}>
-        <Grid container spacing={3}>
-          <Grid xs={12} item>
-            <NavBar changeTheme={() => setTheme(!theme)} />
-          </Grid>
-          <Grid item container xs={12} spacing={10} justify="center">
-            <Grid item xs={4}>
-              <Form />
-            </Grid>
-            <Grid xs={5} item>
-              <Queue />
-            </Grid>
-          </Grid>
-        </Grid>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/">
+            <Main changeTheme={() => setTheme(!theme)} />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
